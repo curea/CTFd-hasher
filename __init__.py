@@ -8,20 +8,20 @@ from CTFd.plugins import (
 def load(app):
 	#https://github.com/beatgammit/base64-js/blob/master/base64js.min.js
 	#https://github.com/blueimp/JavaScript-MD5/blob/master/js/md5.min.js
-	register_plugin_assets_directory(app, base_path='/plugins/hasher/assets/')
+	register_plugin_assets_directory(app, base_path='/plugins/CTFd-hasher/assets/')
 
-	register_user_page_menu_bar(name='Hasher', route='/hasher')
+	register_user_page_menu_bar(name='Hasher', route='/CTFd-hasher')
 
-	@app.route('/hasher', methods=['GET'])
+	@app.route('/CTFd-hasher', methods=['GET'])
 	def hash():
 		return render_template('page.html', content="<script src='/themes/original/static/js/vendor/jquery.min.js' type='text/javascript'></script>"\
-"<script src='/plugins/hasher/assets/md5.min.js' type='text/javascript'></script>"\
-"<script src='/plugins/hasher/assets/base64js.min.js' type='text/javascript'></script>"\
-"<script src='/plugins/hasher/assets/sha.js' type='text/javascript'></script>"\
+"<script src='/plugins/CTFd-hasher/assets/md5.min.js' type='text/javascript'></script>"\
+"<script src='/plugins/CTFd-hasher/assets/base64js.min.js' type='text/javascript'></script>"\
+"<script src='/plugins/CTFd-hasher/assets/sha.js' type='text/javascript'></script>"\
 "<h1>Hash a value</h1>"\
-"<input id='valuetohash' style='width: 400px;'></input>"\
+"<input id='valuetohash' style='width: 80%;'></input>&nbsp;"\
 "<button id='hash'>go</button><br/>"\
-"<label id='output'></label>"\
+"<label id='output' style='width: 80%;'></label>&nbsp;"\
 "<button id='copy'>copy</button>"\
 "<script>"\
 "    $(function() {"\
