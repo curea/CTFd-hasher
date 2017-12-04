@@ -1,0 +1,40 @@
+{% extends "admin/base.html" %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center">CTFd Hasher</h1>
+
+<div class="row">
+    <form method="POST" id="thunderpush_settings">
+        <div class="col-md-6 col-md-offset-3">
+            <p class="text-center">Hash Configuration</p>
+            <div class="form-group">
+                <div class="form-group">
+                    <label>Hash Algorithm</label>
+                    <input class="form-control" name='algorithm' type='text' placeholder="SHA-256">
+                </div>
+            </div>
+            <input id="nonce" name='nonce' type='hidden' value="{{ nonce }}">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <button type="submit" class="btn btn-success text-center">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+    $('#thunderpush_settings').submit(function(e){
+        e.preventDefault();
+        $.post(window.location.pathname, $(this).serialize(), function(data){
+            if (data == 1){
+                window.location.reload();
+            }
+        });
+    });
+</script>
+{% endblock %}

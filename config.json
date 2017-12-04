@@ -1,4 +1,4 @@
 {
     "name": "CTFd Hasher",
-    "route": "/hasher"
+    "route": "/admin/plugins/CTFd-hasher"
 }
