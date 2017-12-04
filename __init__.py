@@ -27,7 +27,7 @@ def load(app):
 "    $(function() {"\
 "        $('#hash').click( function()"\
 "            {"\
-"                var val = $('#valuetohash').val();\n"\
+"                var val = $('#valuetohash').val().trim();\n"\
 "                //var hash = md5(val);\n"\
 "                var shaObj = new jsSHA('SHA-256', 'TEXT');\n"\
 "                shaObj.update(val);\n"\
