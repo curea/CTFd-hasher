@@ -10,7 +10,7 @@ def load(app):
 	#https://github.com/blueimp/JavaScript-MD5/blob/master/js/md5.min.js
 	register_plugin_assets_directory(app, base_path='/plugins/CTFd-hasher/assets/')
 
-	register_user_page_menu_bar(name='Hasher', route='/CTFd-hasher')
+	register_user_page_menu_bar(name='Hasher', route='/CTFd-hasher', target='_blank')
 
 	@app.route('/CTFd-hasher', methods=['GET'])
 	def hash():
