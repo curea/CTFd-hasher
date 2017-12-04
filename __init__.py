@@ -20,9 +20,9 @@ def load(app):
 "<script src='/plugins/CTFd-hasher/assets/sha.js' type='text/javascript'></script>"\
 "<h1>Hash a value</h1>"\
 "<input id='valuetohash' style='width: 80%;'></input>&nbsp;"\
-"<button id='hash'>go</button><br/>"\
-"<label id='output' style='width: 80%;'></label>&nbsp;"\
-"<button id='copy'>copy</button>"\
+"<button id='hash'>go</button><br/><br/>"\
+"<textarea id='output' style='width: 80%;'></textarea>&nbsp;"\
+"<button id='copy' style='position:relative; top: -8px;'>copy</button>"\
 "<script>"\
 "    $(function() {"\
 "        $('#hash').click( function()"\
