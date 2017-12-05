@@ -6,11 +6,14 @@ from CTFd.plugins import (
 )
 
 def load(app):
-	#https://github.com/beatgammit/base64-js/blob/master/base64js.min.js
-	#https://github.com/blueimp/JavaScript-MD5/blob/master/js/md5.min.js
+	#https://github.com/blueimp/JavaScript-MD5/
+	#https://github.com/Caligatio/jsSHA
+	#https://github.com/beatgammit/base64-js/
 	register_plugin_assets_directory(app, base_path='/plugins/CTFd-hasher/assets/')
 
-	register_user_page_menu_bar(name='Hasher', route='/CTFd-hasher', target='_blank')
+	#abc - only works on modified server.
+	#register_user_page_menu_bar(name='Hasher', route='/CTFd-hasher', target='_blank')
+	register_user_page_menu_bar(name='Hasher', route='/CTFd-hasher')
 
 	@app.route('/CTFd-hasher', methods=['GET'])
 	def hash():
