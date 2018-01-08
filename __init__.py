@@ -35,9 +35,8 @@ def load(app):
                 //var hash = md5(val);
                 var shaObj = new jsSHA('SHA-256', 'TEXT');
                 shaObj.update(val);
-                var hash = shaObj.getHash('HEX');
-                var b64str = base64js.fromByteArray(hash);
-                $('#output').html(b64str);
+                var hash = shaObj.getHash('B64');
+                $('#output').html(hash);
             }
         );
 
